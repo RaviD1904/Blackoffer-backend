@@ -2,6 +2,7 @@ const express=require('express')
 const cors = require('cors');
 const app=express()
 require("./db/conn");
+const blackofferSchema=require('./models/blackofferSchema')
 const http = require('http').Server(app);
 const PORT=3000
 
@@ -11,12 +12,10 @@ app.use(cors())
 
 
 
-app.get("/status", (request, response) => {
-    const status = {
-       "Status": "Running"
-    };
-    
-    response.send(status);
+app.get("/status", async(req, res) => {
+
+    const allData=await blackofferSchema.find({})
+    res.send(allData);
  });
 
 http.listen(PORT, () =>{
