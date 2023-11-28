@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 
-
 const stringDataType={
     type:String,
     default:"", 
@@ -12,7 +11,7 @@ const numberDataType={
 }
 const DateDataType={
     type:Date,
-    default:null, 
+    default:Date.now(), 
 }
 
 const blackofferSchema=new mongoose.Schema({
@@ -37,5 +36,5 @@ const blackofferSchema=new mongoose.Schema({
 
 
 
-
-module.exports =  mongoose.model("blackoffer", blackofferSchema);
+const BlackOfferModal= mongoose.model("sampledata", blackofferSchema);
+module.exports =BlackOfferModal;
