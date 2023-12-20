@@ -1,12 +1,13 @@
 
+
 const mongoose=require('mongoose')
-const uri = "mongodb+srv://root:Ravi123@cluster0.3zkv8yt.mongodb.net/blackoffer?retryWrites=true&w=majority";
+
 
 
 
 const connectDatabase=async()=>{
 try {
-  const conn=await mongoose.connect(uri)
+  const conn=await mongoose.connect(process.env.MONGO_URL)
   console.log("Successfully Connected to database")
 } catch (error) {
   // conn.disconnect()

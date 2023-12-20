@@ -1,5 +1,7 @@
 const express=require('express')
 const cors = require('cors');
+const dotenv=require('dotenv')
+dotenv.config()
 const app=express()
 const connectDatabase=require("./db/conn");
 const BlackOfferModal=require('./models/blackofferSchema');
@@ -114,5 +116,5 @@ app.get("/endyearfilter", async(req, res) => {
 
 app.listen(8080, () =>{
     connectDatabase()
-    console.log(`Server is running on the port : ${8000}`);
+    console.log(`Server is running on the port : ${8080}`);
 });
