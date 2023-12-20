@@ -105,7 +105,7 @@ app.get("/endyearfilter", async(req, res) => {
                     const {country}=req.query
                     try {
                        const results=await BlackOfferModal.find({country:{$regex:country,$options:"i"}})
-                       // console.log(allData)
+                       console.log(allData)  
                        res.send(results);
                     } catch (error) {
                        res.send(error.messege)
